@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Zace Alchemist Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main class="gallery-page">
+        <h2>Product Gallery</h2>
+                <div class="gallery-slideshow">
+            <button class="slide-arrow left" id="prevSlide">&#8592;</button>
+            <img id="slideshowImage" src="johnie.jpg" alt="Product Image">
+            <button class="slide-arrow right" id="nextSlide">&#8594;</button>
+        </div>
+        <div class="slideshow-caption" id="slideshowCaption">Johnnie Walker Black Label</div>
+    </main>
+    <div id="footer-container"></div>
+    <script src="js/script.js"></script>
+    <script>
+const images = [
+    {src: "johnie.jpg", caption: "Johnnie Walker Black Label"},
+    {src: "jameson.jpg", caption: "Jameson Irish Whiskey"},
+    {src: "glenddich.jpg", caption: "Glenfiddich 12 Year Old"},
+    {src: "monkey.jpg", caption: "Monkey Shoulder Blended Malt"},
+    {src: "lavugine.jpg", caption: "Lagavulin 16 Year Old"},
+    {src: "morgan.png", caption: "Captain Morgan Original Spiced Rum"},
+    {src: "bacardi.jpg", caption: "Bacardi Superior"},
+    {src: "mountgrey.jpg", caption: "Mount Gay Eclipse"},
+    {src: "Don Papa Small Batch Rum.jpg", caption: "Don Papa Rum"},
+    {src: "malibu.jpg", caption: "Malibu Coconut Rum"},
+    {src: "absolut.jpg", caption: "Absolut Vodka"},
+    {src: "grey.jpg", caption: "Grey Goose"},
+    {src: "belvedere.jpg", caption: "Belvedere Vodka"},
+    {src: "smirnoff.jpg", caption: "Smirnoff No. 21"},
+    {src: "tito.jpg", caption: "Tito's Handmade Vodka"},
+    {src: "bombay.jpg", caption: "Bombay Sapphire"},
+    {src: "drygin.jpg", caption: "Tanqueray London Dry"},
+    {src: "hendrick.jpg", caption: "Hendrick's Gin"},
+    {src: "beefeater.jpg", caption: "Beefeater London Dry"},
+    {src: "gordonchick.png", caption: "Gordon's London Dry"},
+    {src: "patron.jpg", caption: "Patrón Silver Tequila"},
+    {src: "Don.jpg", caption: "Don Julio Reposado"},
+    {src: "Jose.jpg", caption: "Jose Cuervo Especial"},
+    {src: "espolon.jpg", caption: "Espolon Blanco"},
+    {src: "delmag.jpg", caption: "Del Maguey Vida Mezcal"},
+    {src: "hennessy.jpg", caption: "Hennessy VS Cognac"},
+    {src: "remy.jpg", caption: "Remy Martin VSOP"},
+    {src: "couryvoisier.jpg", caption: "Courvoisier VS"},
+    {src: "fundador.jpg", caption: "Fundador Brandy"},
+    {src: "emperador.jpg", caption: "Emperador Light Brandy"},
+    {src: "bailey.jpg", caption: "Baileys Irish Cream"},
+    {src: "kahlua.jpg", caption: "Kahlúa Coffee Liqueur"},
+    {src: "grand.jpg", caption: "Grand Marnier"},
+    {src: "disaronno.jpg", caption: "Disaronno Originale"},
+    {src: "jager.jpg", caption: "Jägermeister"},
+    {src: "lambanog.jpg", caption: "Lambanog"},
+    {src: "basi.jpg", caption: "Basi"},
+    {src: "tuba.jpg", caption: "Tuba"},
+    {src: "tapuy.jpg", caption: "Tapuy"},
+    {src: "vino.jpg", caption: "Vino Kulafu"},
+    {src: "redwin.jpg", caption: "Red Wine"},
+    {src: "whitewine.jpg", caption: "White Wine"},
+    {src: "rosewine.jpg", caption: "Rosé Wine"},
+    {src: "champage.jpg", caption: "Champagne"},
+    {src: "sake.jpg", caption: "Sake"},
+    {src: "soju.jpg", caption: "Soju"},
+    {src: "brandy.jpg", caption: "Brandy Alexander"},
+    {src: "irish.png", caption: "Irish Cream"},
+    {src: "apple.jpg", caption: "Apple Cider"},
+    {src: "craft.jpg", caption: "Craft Beer"}
+];
+
+let current = 0;
+const img = document.getElementById('slideshowImage');
+const caption = document.getElementById('slideshowCaption');
+const prev = document.getElementById('prevSlide');
+const next = document.getElementById('nextSlide');
+let timer = null;
+
+function showSlide(idx) {
+    current = (idx + images.length) % images.length;
+    img.style.opacity = 0;
+    setTimeout(() => {
+        img.src = images[current].src;
+        img.alt = images[current].caption;
+        caption.textContent = images[current].caption;
+        img.style.opacity = 1;
+    }, 250);
+}
+
+function nextSlide() {
+    showSlide(current + 1);
+    resetTimer();
+}
+function prevSlideFunc() {
+    showSlide(current - 1);
+    resetTimer();
+}
+function resetTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => showSlide(current + 1), 5000);
+}
+
+prev.addEventListener('click', prevSlideFunc);
+next.addEventListener('click', nextSlide);
+img.addEventListener('click', nextSlide); // Optional: click image to go next
+
+// Start slideshow
+showSlide(0);
+resetTimer();
+</script>
+</body>
+</html>

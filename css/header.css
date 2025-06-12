@@ -1,0 +1,192 @@
+/* css/header.css */
+
+/* Header Container */
+header {
+    background-color: #2c2c2c;
+    color: #ffc107;
+    padding: 0px 1%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #ffc107; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Top Bar: Holds Logo and Main Navigation */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+/* Logo and Tagline */
+.logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    align-items: flex-start;
+}
+
+.logo-title {
+    font-size: 3.5em;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: -1px;
+    color: #ffc107;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #aaa;
+    margin-left: 0;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li,
+.main-nav ul li.dropdown,
+.main-nav ul li.cart-dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px; /* Adjust this value to match your nav height */
+    margin: 0 8px;
+}
+
+.main-nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.main-nav ul li a:hover {
+    color: #ffc107;
+    transform: translateY(-3px);
+}
+
+/* Shop Now dropdown alignment fix */
+.main-nav ul li.dropdown > a {
+    align-self: center;
+}
+
+.main-nav ul li.dropdown > .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 0;
+}
+
+/* Category Navigation */
+.category-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-nav ul li {
+    margin: 0 10px;
+}
+
+.category-nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-nav ul li a:hover {
+    background-color: #555;
+    color: #ffc107;
+}
+
+/* Dropdown Menu Styles with animation */
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px) scaleY(0.95);
+    transition:
+        opacity 0.3s cubic-bezier(.4,0,.2,1),
+        transform 0.3s cubic-bezier(.4,0,.2,1);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 6px;
+    margin-top: 0;
+    min-width: 200px;
+    z-index: 100;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    padding: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scaleY(1);
+    display: block;
+}
+.dropdown-menu li a {
+    display: inline-block; /* Only as wide as the text */
+    border-radius: 999px;
+    padding: 10px 22px;
+    transition: 
+        background 0.2s, 
+        color 0.2s, 
+        box-shadow 0.2s;
+}
+
+.dropdown-menu li {
+    padding: 0 8px; /* Optional: add side padding for spacing */
+}
+.dropdown-menu li a:hover {
+    background: #222;
+    color: #222; /* This makes text dark on yellow pill */
+    box-shadow: 0 2px 8px rgba(255,193,7,0.15);
+}
+.explore-btn {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #ffc107 0%, #ff9800 100%);
+    color: #232323;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 26px;
+    font-size: 1.08em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.explore-btn:hover {
+    background: linear-gradient(90deg, #ff9800 0%, #ffc107 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}

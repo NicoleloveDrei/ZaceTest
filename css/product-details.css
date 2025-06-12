@@ -1,0 +1,90 @@
+/* Styles for individual product detail pages */
+.product-detail-page {
+    padding: 30px;
+    color: #ddd;
+}
+
+.product-hero {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.product-image {
+    max-width: 400px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.hero-text h1 {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.persuasive-description {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.product-info {
+    margin-bottom: 40px;
+}
+
+.product-info h2 {
+    color: #ffc107;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+.info-section {
+    margin-bottom: 25px;
+}
+
+.info-section h3 {
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.ingredients-recipe, .origin, .discovery-date {
+    line-height: 1.6;
+}
+
+.call-to-action {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.call-to-action p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.call-to-action .button, .call-to-action .back-button {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #222;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+
+.call-to-action .button:hover, .call-to-action .back-button:hover {
+    background-color: #e0a800;
+}
+/* Make all product images the same size */
+.product-item img {
+    width: 150px;
+    height: 200px;
+    object-fit: contain; /* or 'cover' if you want to crop */
+    display: block;
+    margin: 0 auto 10px auto;
+}

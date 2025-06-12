@@ -1,0 +1,22 @@
+{
+  "name": "zace-website",
+  "version": "1.0.0",
+  "description": "A static website for ZACE!",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server . -o"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "static-site",
+    "ecommerce"
+  ],
+  "author": "Zandrei Padilla",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "open-cli": "^7.0.0"
+  }
+}
