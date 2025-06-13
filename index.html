@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+    <div id="zoomBanner" style="background:#ffc107;color:#232323;padding:12px 0;text-align:center;font-weight:bold;position:fixed;top:0;left:0;width:100%;z-index:9999;">
+    Zace Alchemist says: For the best experience, please zoom out your browser to 80% (Ctrl + - or use your browser's zoom controls). <span id="closeBanner" style="cursor:pointer;margin-left:20px;">[Close]</span>
+</div>
     <div id="header-container"></div>
 
     <main class="home-page">
@@ -48,5 +51,13 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('closeBanner').onclick = function() {
+    document.getElementById('zoomBanner').style.display = 'none';
+};
+window.addEventListener('DOMContentLoaded', function() {
+    alert("For the best experience, please zoom out your browser to 80% (Ctrl + - or use your browser's zoom controls). The site was designed at 80% zoom and may look unaligned at 100%.");
+});
+</script>
 </body>
 </html>
