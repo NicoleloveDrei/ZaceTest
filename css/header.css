@@ -22,21 +22,30 @@ header {
 }
 
 /* Logo and Tagline */
-.logo {
+ .logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;   /* This centers logo and title vertically */
+    gap: 16px;
     margin-bottom: 0;
-    align-items: flex-start;
 }
-
+.logo img {
+    display: block;
+    height: 48px;
+    width: auto;
+    border-radius: 8px;
+    margin: 0; /* No extra margin */
+    padding: 0;
+}
 .logo-title {
-    font-size: 3.5em;
+    font-size: 2.2em;
     font-family: 'Georgia', serif;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1;
-    margin-bottom: -1px;
+    margin: 0;
     color: #ffc107;
+    padding: 0;
 }
 
 .tagline {
