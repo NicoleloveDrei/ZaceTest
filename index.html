@@ -62,12 +62,12 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 });
 window.addEventListener('DOMContentLoaded', function() {
-    if (!localStorage.getItem('zoomBannerShown')) {
+    if (!sessionStorage.getItem('zoomBannerShown')) {
         document.getElementById('zoomBanner').style.display = 'block';
     }
     document.getElementById('closeBanner').onclick = function() {
         document.getElementById('zoomBanner').style.display = 'none';
-        localStorage.setItem('zoomBannerShown', 'yes');
+        sessionStorage.setItem('zoomBannerShown', 'yes');
     };
 });
 </script>
