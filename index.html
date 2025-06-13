@@ -56,7 +56,10 @@
     document.getElementById('zoomBanner').style.display = 'none';
 };
 window.addEventListener('DOMContentLoaded', function() {
-    alert("For the best experience, please zoom out your browser to 80% (Ctrl + - or use your browser's zoom controls). The site was designed at 80% zoom and may look unaligned at 100%.");
+    if (!localStorage.getItem('zoomAlertShown')) {
+        alert("For the best experience, please zoom out your browser to 80% (Ctrl + - or use your browser's zoom controls). The site was designed at 80% zoom and may look unaligned at 100%.");
+        localStorage.setItem('zoomAlertShown', 'yes');
+    }
 });
 window.addEventListener('DOMContentLoaded', function() {
     if (!localStorage.getItem('zoomBannerShown')) {
